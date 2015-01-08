@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>BiharBakery</title>
+</head>
+<script>
+	/*function validate()
+	{
+		var exp=/^[A-Za-z]{3,10}$/;
+		if(document.loginForm.login.value!="admin")
+		{
+		if(document.loginForm.login.value=="")
+			{
+			alert("Please Enter Credentials");			
+			document.loginForm.login.focus() ;
+			return false;
+			}
+		else
+			{
+				if((document.loginForm.login.value).match(exp))
+					{
+						alert("username not upto specification");										
+					}
+			}
+		}
+		if(document.loginForm.password.value=="")
+		{
+		alert("Please Enter Password");			
+		document.loginForm.login.focus() ;
+		return false;
+		}
+	}
+
+	
+	*/
+	function checkuserName()
+	{
+		username = document.loginForm.login.value;
+		var exp=/^[A-Za-z0-9]{3,10}$/;
+		if(username=="")
+		{
+			alert("Please Enter Credentials");
+			document.loginForm.login.focus() ;
+			return false;
+		}	
+		else
+		{
+			if(!username.match(exp))
+				{
+					alert("UserName is not as per standards");
+					document.loginform.login.focus();
+				}
+		}
+		
+	}
+	function checkpwd()
+	{
+
+		if(document.loginForm.password.value=="")
+		{
+				alert("Enter password");
+				document.loginForm.password.focus() ;
+				return false;
+		}	
+	}
+</script>
+<body background="images/chococake2.jpg">
+<h1  align="center"><font color="white"> Login Page</font> </h1><br/>
+	<form action="LoginController" method ="post" name="loginForm" onSubmit="return validate()">
+	
+<table align="center">
+		<tr><td ><font color="white">Login id</font></td><td><input type="text"name="login" onBlur="checkuserName(this.id,this.value)"/> </td></tr>
+		<tr><td><font color="white">Password</font></td><td><input type="password" name="password"value="" onBlur="checkpwd(this.id,this.value)"/></td></tr>
+		<tr><td></td></tr><tr><td></td></tr>	<tr><td></td></tr>		
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Login" name="UserName" align="left"/></td>
+		<td>&nbsp;&nbsp;<input type="reset" align="left" name="password"/></td>
+	</tr>
+	</table>
+	
+	</form>
+</body>
+</html>
